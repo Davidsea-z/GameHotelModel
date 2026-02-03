@@ -740,7 +740,7 @@ const defaultValues = {
     equipmentCost: 356400,
     franchiseCost: 88000,
     otherCost: 3500,
-    annualOperatingCost: 7000
+    annualOperatingCost: 0
 };
 
 // 计算财务指标
@@ -814,7 +814,7 @@ function calculate() {
     // 更新显示
     updateDisplay({
         dailyRevenue: dailyRevenue.toFixed(0),
-        monthlyRevenue: monthlyRevenue.toFixed(0),
+        monthlyRevenue: Math.round(monthlyRevenue).toLocaleString('en-US'),
         yearlyRevenue: (yearlyRevenueGross / 10000).toFixed(2),
         profitShare: (jingShengIncome / 10000).toFixed(2),
         franchiseeIncome: (franchiseeIncome / 10000).toFixed(2),
